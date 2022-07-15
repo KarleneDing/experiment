@@ -1,4 +1,4 @@
-  #!/bin/sh
+  #!/bin/bash
 
   COMMIT_MSG=$(cat "$1")
   REGEX_CHECK="^\[#([+]{0,1}(\d+))\]\[[a-zA-Z0-9\s\&]*\]"
