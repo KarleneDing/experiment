@@ -14,6 +14,14 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
+task installGitHooks(type: Copy) {
+    from new File(rootProject.rootDir, "scripts/commit-msg")
+    into { new File(rootProject.rootDir, '.git/hooks') }
+    fileMode 0775
+}
+tasks.getByPath(':build').dependsOn installGitHooks
+
+
 test {
     useJUnitPlatform()
 }

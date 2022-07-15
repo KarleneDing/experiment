@@ -1,0 +1,13 @@
+  #!/bin/sh
+
+  COMMIT_MSG=$(cat "$1")
+  REGEX_CHECK="^\[#([+]{0,1}(\d+))\]\[[a-zA-Z0-9\s\&]*\]"
+  CHECK_FORMAT_IN_COMMIT=$(echo "$COMMIT_MSG" | grep -o -E "$REGEX_CHECK")
+
+  echo "Checking commit message..."
+
+  # shellcheck disable=SC2039
+  if [[ -z "$CHECK_FORMAT_IN_COMMIT" ]];then
+  echo "Your commit message is illegal. Please rename your commit as '[#cardNumber][YourName] Commit Message Detail.'"
+  exit 1
+  fi
