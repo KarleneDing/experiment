@@ -11,3 +11,4 @@
   echo "Your commit message is illegal. Please rename your commit as '[#cardNumber][YourName] Commit Message Detail.'"
   exit 1
   fi
+  
