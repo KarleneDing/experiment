@@ -36,11 +36,11 @@ do
 			# New branch, examine all commits
 			range="$local_oid"
 		else
-			# Update to existing branch, examine new commits oiuytfghjk
+			# Update to existing branch, examine new commits
 			range="$remote_oid..$local_oid"
 		fi
 
-		# Check for WIP commit sdsdsdsdssdsdsd
+		# Check for WIP commit
 		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
 		if test -n "$commit"
 		then
