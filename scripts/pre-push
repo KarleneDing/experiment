@@ -41,7 +41,7 @@ do
 			range="$remote_oid..$local_oid"
 		fi
 
-		# Check for WIP commit
+		# Check for WIP commit iuytfrghjklkjhg
 		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
 		if test -n "$commit"
 		then
