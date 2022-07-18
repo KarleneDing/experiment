@@ -36,7 +36,7 @@ do
 			# New branch, examine all commits
 			range="$local_oid"
 		else
-			# Update to existing branch, examine new commits
+			# Update to existing branch, examine new commits dsdsdsdsd
 			range="$remote_oid..$local_oid"
 		fi
 
