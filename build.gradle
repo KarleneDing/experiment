@@ -15,13 +15,13 @@ dependencies {
 }
 
 
-task installGitHooks(type: Copy) {
-    String result = "git config core.hooksPath .git/hooks".execute().text
-    from new File(rootProject.rootDir, "scripts/commit-msg")
-    into { new File(rootProject.rootDir, '.git/hooks') }
-    fileMode 0775
-}
-tasks.getByPath(':build').dependsOn installGitHooks
+//task installGitHooks(type: Copy) {
+//    String result = "git config core.hooksPath .git/hooks".execute().text
+//    from new File(rootProject.rootDir, "scripts/commit-msg")
+//    into { new File(rootProject.rootDir, '.git/hooks') }
+//    fileMode 0775
+//}
+//tasks.getByPath(':build').dependsOn installGitHooks
 
 task installPrePushHooks(type: Copy) {
     String result = "git config core.hooksPath .git/hooks".execute().text
