@@ -13,14 +13,22 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
+//
+//task installGitHooks(type: Copy) {
+//    String result = "git config core.hooksPath .git/hooks".execute().text
+//    from new File(rootProject.rootDir, "scripts/commit-msg")
+//    into { new File(rootProject.rootDir, '.git/hooks') }
+//    fileMode 0775
+//}
+//tasks.getByPath(':build').dependsOn installGitHooks
 
-task installGitHooks(type: Copy) {
-    from new File(rootProject.rootDir, "scripts/commit-msg")
-    into { new File(rootProject.rootDir, '.git/hooks') }
-    fileMode 0775
-}
-tasks.getByPath(':build').dependsOn installGitHooks
-
+//task installPrePushHooks(type: Copy) {
+//    String result = "git config core.hooksPath .git/hooks".execute().text
+//    from new File(rootProject.rootDir, "scripts/pre-push")
+//    into { new File(rootProject.rootDir, '.git/hooks') }
+//    fileMode 0775
+//}
+//tasks.getByPath(':build').dependsOn installGitHooks
 
 test {
     useJUnitPlatform()
