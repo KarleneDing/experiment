@@ -19,10 +19,12 @@
 # This sample shows how to prevent push of commits where the log message starts
 # with "WIP" (work in progress).
 
+./gradlew build
+echo "re-build..."
+
 remote="$1"
 url="$2"
 
-echo "here!"
 zero=$(git hash-object --stdin </dev/null | tr '[0-9a-f]' '0')
 
 while read local_ref local_oid remote_ref remote_oid
@@ -41,7 +43,7 @@ do
 			range="$remote_oid..$local_oid"
 		fi
 
-		# Check for WIP commit iuytfrghjklkjhg
+		# Check for WIP commit iuytfrghsddsjklkjhg
 		commit=$(git rev-list -n 1 --grep '^WIP' "$range")
 		if test -n "$commit"
 		then
